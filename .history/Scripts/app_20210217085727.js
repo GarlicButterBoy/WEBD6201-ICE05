@@ -167,6 +167,7 @@ let myContact =
           
         }
 
+        console.log(contactData);
       });
 
       //console.log("outside the event listener" + XHR.responseText);

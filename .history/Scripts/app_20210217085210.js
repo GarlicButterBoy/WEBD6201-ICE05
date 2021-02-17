@@ -136,37 +136,23 @@ let myContact =
       //Step 4: Listen for a response
       XHR.addEventListener("readystatechange", function() 
       {
-        let contactData = "";
         //Step 5: Ensure the server is ready and there are no errors
         if (XHR.readyState === 4 && XHR.status === 200)
         {
           let contacts = JSON.parse(XHR.responseText).contacts;
 
-          
-          let contactIndex = 0;
+          let contactData = 
 
           //Step 6: Do something with the data
           for (const contact of contacts)
           {
+            console.log(contact);
 
-            let newContact = new core.Contact();
-            newContact.fromJSON(contact);
-  
-            contactData += `<tr>
-                    <th scope="row">${contactIndex}</th>
-                    <td>${newContact.FullName}</td>
-                    <td>${newContact.ContactNumber}</td>
-                    <td>${newContact.EmailAddress}</td>
-                    <td class="text-center"><button class="btn btn-primary btn-sm edit" value="${contactIndex}"><i class="fas fa-sm fa-edit"></i> Edit</button></td>
-                    <td class="text-center"><button class="btn btn-warning btn-sm delete" value="${contactIndex}"><i class="fas fa-sm fa-trash-alt"></i> Delete</button></td>
-                    </tr>`;
-            contactIndex++;
           }
           //console.log(JSON.parse(XHR.responseText));
 
           
         }
-
       });
 
       //console.log("outside the event listener" + XHR.responseText);

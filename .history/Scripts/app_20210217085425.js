@@ -136,29 +136,31 @@ let myContact =
       //Step 4: Listen for a response
       XHR.addEventListener("readystatechange", function() 
       {
-        let contactData = "";
         //Step 5: Ensure the server is ready and there are no errors
         if (XHR.readyState === 4 && XHR.status === 200)
         {
           let contacts = JSON.parse(XHR.responseText).contacts;
 
-          
-          let contactIndex = 0;
+          let contactData = "";
+          let contactIndex = 1;
 
           //Step 6: Do something with the data
           for (const contact of contacts)
           {
-
-            let newContact = new core.Contact();
-            newContact.fromJSON(contact);
+                        let contactData = localStorage.getItem(key);
   
-            contactData += `<tr>
-                    <th scope="row">${contactIndex}</th>
-                    <td>${newContact.FullName}</td>
-                    <td>${newContact.ContactNumber}</td>
-                    <td>${newContact.EmailAddress}</td>
-                    <td class="text-center"><button class="btn btn-primary btn-sm edit" value="${contactIndex}"><i class="fas fa-sm fa-edit"></i> Edit</button></td>
-                    <td class="text-center"><button class="btn btn-warning btn-sm delete" value="${contactIndex}"><i class="fas fa-sm fa-trash-alt"></i> Delete</button></td>
+            console.log(contactData);
+  
+            let newContact = new core.Contact();
+            contact.deserialize(contactData);
+  
+            data += `<tr>
+                    <th scope="row">${index}</th>
+                    <td>${contact.FullName}</td>
+                    <td>${contact.ContactNumber}</td>
+                    <td>${contact.EmailAddress}</td>
+                    <td class="text-center"><button class="btn btn-primary btn-sm edit" value="${key}"><i class="fas fa-sm fa-edit"></i> Edit</button></td>
+                    <td class="text-center"><button class="btn btn-warning btn-sm delete" value="${key}"><i class="fas fa-sm fa-trash-alt"></i> Delete</button></td>
                     </tr>`;
             contactIndex++;
           }
@@ -166,7 +168,6 @@ let myContact =
 
           
         }
-
       });
 
       //console.log("outside the event listener" + XHR.responseText);

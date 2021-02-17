@@ -136,13 +136,12 @@ let myContact =
       //Step 4: Listen for a response
       XHR.addEventListener("readystatechange", function() 
       {
-        let contactData = "";
         //Step 5: Ensure the server is ready and there are no errors
         if (XHR.readyState === 4 && XHR.status === 200)
         {
           let contacts = JSON.parse(XHR.responseText).contacts;
 
-          
+          let contactData = "";
           let contactIndex = 0;
 
           //Step 6: Do something with the data
@@ -167,6 +166,7 @@ let myContact =
           
         }
 
+        console.log(contact)
       });
 
       //console.log("outside the event listener" + XHR.responseText);
