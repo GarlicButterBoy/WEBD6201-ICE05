@@ -1,0 +1,12 @@
+{
+    "users":
+    [
+        {
+            "DisplayName":"John Smith",
+            "EmailAddress":"johnsmith@example.com",
+            "Password":"password",
+            "ConfirmPassword"
+
+        }
+    ]
+}
