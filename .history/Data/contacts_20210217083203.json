@@ -1,0 +1,25 @@
+{
+    "contacts":
+    [
+        {
+            "FullName":"Tony Stark",
+            "ContactNumber":"4165555556",
+            "EmailAddress":"ironman@example.com"
+        }
+        {
+            "FullName":"Severus Snape",
+            "ContactNumber":"4165555557",
+            "EmailAddress":"snivelus@example.com"
+        }
+        {
+            "FullName":"Arago",
+            "ContactNumber":"4165555556",
+            "EmailAddress":"ironman@example.com"
+        }
+        {
+            "FullName":"Tony Stark",
+            "ContactNumber":"4165555556",
+            "EmailAddress":"ironman@example.com"
+        }
+    ]
+}

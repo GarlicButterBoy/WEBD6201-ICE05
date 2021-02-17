@@ -71,7 +71,7 @@
         }
 
         /**
-         * This method converts JSON data object and assigns the values into a contact class object 
+         * This method converts data object into 
          * @param {Object} data 
          */
         fromJSON(data)
