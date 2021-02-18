@@ -388,7 +388,7 @@ let myContact =
       //use AJAX to access the json file
       $.get("./Data/users.json", function(data)
       {
-       // console.log(data.users, function() {
+        console.log(data.users, function() {
           //check each user in users.json (linear search)
           for (const user of data.users) 
           {
@@ -420,7 +420,7 @@ let myContact =
             username.trigger("focus").trigger("select");
 
           }
-        //});
+        });
       });
 
 
@@ -440,24 +440,6 @@ let myContact =
   function displayRegister()
   {
     
-  }
-
-  function toggleLogin()
-  {
-    
-    if(sessionStorage.getItem("user"))
-    {
-      $("#login").html(
-        `<a id="logout" class="nav-link" aria-current="page" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
-      );
-
-      $("#logout").on("click", function() {
-        //perform logout
-        sessionStorage.clear();
-        //redirect to login
-        location.href = "login.html";
-      });
-    }
   }
 
     function Start()
@@ -497,9 +479,17 @@ let myContact =
               displayRegister();    
             break;
         }
-        //Toggle login/logout
-        toggleLogin();
+        
+        if(sessionStorage.getItem("user"))
+        {
+          $("#login").html(
+            `<a id="logout" class="nav-link" aria-current="page" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
+          );
 
+          $("#logout").on("click", function() {
+            
+          });
+        }
 
     }
 

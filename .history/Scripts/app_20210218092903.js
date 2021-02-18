@@ -388,7 +388,7 @@ let myContact =
       //use AJAX to access the json file
       $.get("./Data/users.json", function(data)
       {
-       // console.log(data.users, function() {
+        console.log(data.users, function() {
           //check each user in users.json (linear search)
           for (const user of data.users) 
           {

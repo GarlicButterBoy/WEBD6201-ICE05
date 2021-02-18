@@ -388,7 +388,7 @@ let myContact =
       //use AJAX to access the json file
       $.get("./Data/users.json", function(data)
       {
-       // console.log(data.users, function() {
+        console.log(data.users, function() {
           //check each user in users.json (linear search)
           for (const user of data.users) 
           {
@@ -420,7 +420,7 @@ let myContact =
             username.trigger("focus").trigger("select");
 
           }
-        //});
+        });
       });
 
 
@@ -442,7 +442,7 @@ let myContact =
     
   }
 
-  function toggleLogin()
+  function displayLogout()
   {
     
     if(sessionStorage.getItem("user"))
@@ -498,7 +498,7 @@ let myContact =
             break;
         }
         //Toggle login/logout
-        toggleLogin();
+        toggleLogout();
 
 
     }
