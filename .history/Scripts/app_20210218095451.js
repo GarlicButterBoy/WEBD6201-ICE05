@@ -470,14 +470,14 @@ let myContact =
         location.href = "login.html";
       });
 
-      $(
-        `<li  class="nav-item">
-         <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
-         </li>`
-        ).insertBefore("#login");
+      
     }
 
-    
+    $(
+      `<li  class="nav-item">
+       <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
+       </li>`
+      ).insertBefore("#login");
   }
 
     function Start()

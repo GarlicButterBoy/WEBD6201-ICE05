@@ -170,24 +170,17 @@ let myContact =
 
       });
       */
-
-     
-      $("#contactListLink").attr("class", "nav-link active");
       
       //if the user is already logged in
-    if (!sessionStorage.getItem("user"))
-    {
+  //  if (!sessionStorage.getItem("user"))
+  //  {
       //redirect to the secure area
       location.href = "login.html";
     }
 
-    
 
       if(localStorage.length > 0)
       {
-        
-        //document.getElementById("#contactListLink").setAttribute("class", "nav-link active");
-
         let contactList = document.getElementById("contactList");
 
         let data = "";
@@ -429,8 +422,6 @@ let myContact =
 
           }
         //});
-
-        
       });
 
 
@@ -445,8 +436,6 @@ let myContact =
       //return to contact-list.html
       location.href = "index.html";
     });
-
-    
   }
 
   function displayRegister()
@@ -471,13 +460,11 @@ let myContact =
       });
 
       $(
-        `<li  class="nav-item">
-         <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
+        `<li id="contactListLink" class="nav-item">
+         <a class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
          </li>`
-        ).insertBefore("#login");
+      ).insertBefore("#login");
     }
-
-    
   }
 
     function Start()
@@ -505,7 +492,6 @@ let myContact =
               displayContact();
             break;
           case "Contact-List":
-             
               displayContactList();
               break;
           case "Edit":

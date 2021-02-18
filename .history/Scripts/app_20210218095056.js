@@ -171,7 +171,11 @@ let myContact =
       });
       */
 
-     
+     $(
+      `<li  class="nav-item">
+       <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
+       </li>`
+      ).insertBefore("#login");
       $("#contactListLink").attr("class", "nav-link active");
       
       //if the user is already logged in
@@ -429,8 +433,6 @@ let myContact =
 
           }
         //});
-
-        
       });
 
 
@@ -445,8 +447,6 @@ let myContact =
       //return to contact-list.html
       location.href = "index.html";
     });
-
-    
   }
 
   function displayRegister()
@@ -470,14 +470,8 @@ let myContact =
         location.href = "login.html";
       });
 
-      $(
-        `<li  class="nav-item">
-         <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
-         </li>`
-        ).insertBefore("#login");
+      
     }
-
-    
   }
 
     function Start()

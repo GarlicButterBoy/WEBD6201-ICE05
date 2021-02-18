@@ -171,8 +171,11 @@ let myContact =
       });
       */
 
-     
-      $("#contactListLink").attr("class", "nav-link active");
+     $(
+      `<li  class="nav-item">
+      <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact   List</a>
+       </li>`
+    ).insertBefore("#login");
       
       //if the user is already logged in
     if (!sessionStorage.getItem("user"))
@@ -185,8 +188,7 @@ let myContact =
 
       if(localStorage.length > 0)
       {
-        
-        //document.getElementById("#contactListLink").setAttribute("class", "nav-link active");
+        document.getElementById("#contactListLink").setAttribute("class", "nav-link active");
 
         let contactList = document.getElementById("contactList");
 
@@ -429,8 +431,6 @@ let myContact =
 
           }
         //});
-
-        
       });
 
 
@@ -445,8 +445,6 @@ let myContact =
       //return to contact-list.html
       location.href = "index.html";
     });
-
-    
   }
 
   function displayRegister()
@@ -470,14 +468,8 @@ let myContact =
         location.href = "login.html";
       });
 
-      $(
-        `<li  class="nav-item">
-         <a id="contactListLink" class="nav-link" aria-current="page" href="contact-list.html"><i class="fas fa-users fa-lg"></i> Contact List</a>
-         </li>`
-        ).insertBefore("#login");
+      
     }
-
-    
   }
 
     function Start()
